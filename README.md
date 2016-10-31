@@ -1,7 +1,7 @@
-Marello Api Magento 2 Extension
+Marello Api Extension
 =============
 
-Marello Api extension is a wrapper which enables the Marello Bridge Magento 2 extension to communicate with an
+Marello Api extension is a wrapper which enables the Marello Bridge extensions to communicate with an
 instance of Marello. This is a very wrapper only provides authentication with X-WSSE headers and allows you and or
 the Marello Bridge extension to send data to a Marello Application instance.
 
