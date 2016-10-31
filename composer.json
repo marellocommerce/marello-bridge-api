@@ -1,6 +1,6 @@
 {
     "name": "marellocommerce/magento2-marello-bridge-api",
-    "description": "Marello Bridge Extension for Magento 2",
+    "description": "Marello Bridge API client",
     "homepage": "https://github.com/marellocommerce/magento2-marello-bridge-api.git",
     "authors": [
         {
@@ -9,20 +9,16 @@
         }
     ],
     "require": {
-        "php": ">=5.5.0",
-        "magento/framework": "100.0.*"
+        "php": ">=5.5.0"
     },
-    "type": "magento2-module",
+    "type": "library",
     "version": "1.0.0-alpha",
     "license": [
         "OSL-3.0"
     ],
     "autoload": {
-        "files": [
-            "registration.php"
-        ],
         "psr-4": {
-            "Marello\\Api\\": ""
+            "Marello\\Api\\": "Marello/Api/"
         }
     },
     "minimum-stability": "dev",
