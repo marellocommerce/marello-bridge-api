@@ -71,7 +71,7 @@ class Authentication
      * @param $password
      * @param $salt
      * @return string
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     private function mergePasswordAndSalt($password, $salt)
     {
@@ -92,10 +92,9 @@ class Authentication
      */
     public function getHeaders()
     {
-        $prefix = gethostname();
         $created = date('c');
-        $nonce  = base64_encode(substr(md5(uniqid($prefix . '_', true)), 0, 16));
-        $passwordDigest = $this->encodePassword(base64_decode($nonce). $created. $this->apiKey, '');
+        $nonce  = $this->generateNonce();
+        $passwordDigest = $this->generatePasswordDigest($nonce, $created);
 
         $wsseProfile = sprintf(
             'X-WSSE: UsernameToken Username="%s", PasswordDigest="%s", Nonce="%s", Created="%s"',
@@ -110,5 +109,27 @@ class Authentication
             'Authorization: WSSE profile="UsernameToken"',
             $wsseProfile
         );
+    }
+
+    /**
+     * Generate nonce
+     * @return string
+     */
+    private function generateNonce()
+    {
+        $prefix = gethostname();
+        return base64_encode(substr(md5(uniqid($prefix . '_', true)), 0, 16));
+    }
+
+    /**
+     * Generate password digest
+     * @param $nonce
+     * @param $created
+     * @return string
+     */
+    private function generatePasswordDigest($nonce, $created)
+    {
+        $rawPass = base64_decode($nonce) . $created . $this->apiKey;
+        return $this->encodePassword($rawPass, '');
     }
 }

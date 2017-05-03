@@ -2,6 +2,10 @@
     "name": "marellocommerce/marello-bridge-api",
     "description": "Marello Bridge API client library",
     "homepage": "https://github.com/marellocommerce/marello-bridge-api.git",
+    "type": "library",
+    "license": [
+        "OSL-3.0"
+    ],
     "authors": [
         {
             "name": "Marello",
@@ -11,14 +15,16 @@
     "require": {
         "php": ">=5.5.0"
     },
-    "type": "library",
-    "license": [
-        "OSL-3.0"
-    ],
+    "require-dev": {
+        "phpunit/phpunit": "~4.8"
+    },
     "autoload": {
         "psr-4": {
-            "Marello\\Api\\": "Marello/Api/"
+            "Marello\\": "src/Marello"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {"Marello\\Tests\\": "tests/Marello"}
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
