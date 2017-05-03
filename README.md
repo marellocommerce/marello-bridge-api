@@ -23,16 +23,41 @@ Oro's cookbook now includes an [instruction](https://github.com/orocrm/documenta
 
 ## Installation instructions
 
-In order to get the Bridge Api, you can easily install this through composer
+In order to get the Bridge Api, you can easily install this through composer. If you don't have composer installed globally, you can get it by running the following command:
+```bash
+curl -s https://getcomposer.org/installer | php
+```
 
 ```bash
-composer require "marellocommerce/marello-bridge-api"
+php composer.phar require "marellocommerce/marello-bridge-api"
 ```
 
 - Install dependencies with composer. If installation process seems too slow you can use `--prefer-dist` option.
 
 ```bash
-composer install --prefer-dist --no-dev
+php composer.phar install --prefer-dist --no-dev
+```
+
+
+## Running Tests
+In order to run the tests for the Marello Bridge API, you need to update the dependencies with composer by running the following command:
+```bash
+php composer.phar update
+```
+
+Or do a fresh install
+```bash
+php composer.phar install --prefer-dist
+```
+
+- To run the tests you need to run the following command in the `vendor/marellocommerce/marello-bridge-api` directory
+```bash
+vendor/phpunit/phpunit/phpunit --testsuite="Marello Api Test Suite"
+```
+
+or if you have `phpunit` installed globally:
+```bash
+phpunit --testsuite="Marello Api Test Suite"
 ```
 
 ## Usage
