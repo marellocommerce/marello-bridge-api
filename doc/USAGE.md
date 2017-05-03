@@ -18,9 +18,6 @@ Oro's cookbook now includes an [instruction](https://github.com/orocrm/documenta
 - Sending DELETE requests;
 - Disable denpendency from Marello Bridge on this wrapper for swapping out this wrapper for, for example GuzzleHttp
 
-**Usage**
-
-
   **Contact**
 Questions? Problems? Improvements?
 Feel free to contact us either through [http://www.marello.com/contact/](http://www.marello.com/contact/), forum [http://www.marello.com/forum/marello/](http://www.marello.com/forum/marello/) or open an issue in the repository :) Thanks!
