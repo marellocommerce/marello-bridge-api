@@ -9,18 +9,36 @@ The extension uses a lot of work done by Sylvain Rayé regarding the X-WSSe auth
 The original post can found  on [Sylvain Rayé's blog](http://www.sylvainraye.com/2014/03/23/using-the-rest-api-of-oroplatform-orocrm-akeneo/).
 Oro's cookbook now includes an [instruction](https://github.com/orocrm/documentation/blob/master/cookbook/how_to_use_wsse_authentication.rst) on how to generate the X-WSSE in an Oro based platform
 
-**Features include:**
-- Pinging the Marello instance (\Marello\Api\Client::pingUsers());
+## Features
+- Pinging the Marello instance (\Marello\Api\Client::pingInstance());
 - Getting data from Marello, including page/limit filter;
-- Sending data to Marello with POST/PUT requests
+- Sending data to Marello with POST/PUT/DELETE requests
 
 **Future Features**
-- Sending DELETE requests;
 - Disable denpendency from Marello Bridge on this wrapper for swapping out this wrapper for, for example GuzzleHttp
 
-**Usage**
+## Requirements
 
+* PHP 5.5.0 or above with command line interface
 
-  **Contact**
+## Installation instructions
+
+In order to get the Bridge Api, you can easily install this through composer
+
+```bash
+composer require "marellocommerce/marello-bridge-api"
+```
+
+- Install dependencies with composer. If installation process seems too slow you can use `--prefer-dist` option.
+
+```bash
+composer install --prefer-dist --no-dev
+```
+
+## Usage
+for usage see [docs/USAGE.md](doc/USAGE.md)
+
+## Contact
 Questions? Problems? Improvements?
+
 Feel free to contact us either through [http://www.marello.com/contact/](http://www.marello.com/contact/), forum [http://www.marello.com/forum/marello/](http://www.marello.com/forum/marello/) or open an issue in the repository :) Thanks!
