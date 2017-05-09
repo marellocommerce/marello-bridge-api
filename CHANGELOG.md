@@ -1,3 +1,8 @@
+CHANGELOG for 1.1.1
+=================
+This changelog references the relevant changes (new features, changes and bugs) done in 1.1.1 version.
+  * fix issue regarding not correctly formatted url in GET requests with payload
+
 CHANGELOG for 1.1.0
 =================
 This changelog references the relevant changes (new features, changes and bugs) done in 1.1.0 version.

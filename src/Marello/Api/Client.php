@@ -130,7 +130,13 @@ class Client
     private function prepareRestUri($path, $baseUri = null)
     {
         $uri = (is_null($baseUri)) ? $this->apiUrl : $baseUri;
-        if ($path[0] != '/' && $uri[strlen($uri)-1] != '/') {
+        $skip = false;
+        if (strpos($path, 'filter') !== false || strpos($path, 'filter') === 0) {
+            $skip = true;
+            $path = str_replace('filter', '', $path);
+        }
+
+        if ($path[0] != '/' && $uri[strlen($uri)-1] != '/' && !$skip) {
             $path = '/' . $path;
         }
 
@@ -279,7 +285,7 @@ class Client
         if (array_key_exists('id', $params)) {
             $uri = $this->prepareRestUri($params['id'], $url);
         } else {
-            $uriParams = sprintf('?%s', http_build_query($params));
+            $uriParams = sprintf('filter?%s', http_build_query($params));
             $uri = $this->prepareRestUri($uriParams, $url);
         }
 
